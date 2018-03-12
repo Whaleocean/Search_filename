@@ -1,0 +1,15 @@
+```
+import os 
+def searchfile(filename,path):
+    os.chdir(path)
+    for x in os.listdir('.'):
+        currentpath = os.path.join(path,x)
+        if os.path.isfile(currentpath) and x.find(filename) > -1:
+           print(currentpath)
+        elif os.path.isdir(currentpath):
+           searchfile(filename,currentpath)
+        else:
+           pass
+ if __name__ == 'main':
+      searchfile('test.txt','./test')
+```
